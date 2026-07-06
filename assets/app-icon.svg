@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1024" height="1024" viewBox="0 0 1024 1024"
+     version="1.1">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       BritReady — App Icon  1024×1024  (v2)
+       Shield centred at 512,525. Spans x=230–794, y=180–870.
+       Crown spans x=392–632, y=60–198. Book removed.
+       Orange accent border 22px stroke-width.
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- ── Background ── -->
+  <rect width="1024" height="1024" fill="#1E3A5F"/>
+
+  <defs>
+
+    <!-- ── Shield clip path ── -->
+    <!-- Symmetric heraldic shield:
+         Flat top from (230,260) to (794,260), brief angled corners,
+         straight sides down to y=560, then quadratic curves to point (512,870). -->
+    <clipPath id="shieldClip">
+      <path d="
+        M512,180
+        L794,260
+        L794,560
+        Q794,780 512,870
+        Q230,780 230,560
+        L230,260
+        Z
+      "/>
+    </clipPath>
+
+    <!-- ── Orange accent gradient ── -->
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4A261"/>
+      <stop offset="100%" stop-color="#E07B3A"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- ══════════════════════════════════════
+       SHIELD — orange border ring (drawn first, slightly larger offset)
+       ══════════════════════════════════════ -->
+  <path d="
+    M512,164
+    L808,246
+    L808,562
+    Q808,792 512,886
+    Q216,792 216,562
+    L216,246
+    Z
+  "
+  fill="none"
+  stroke="url(#accentGrad)"
+  stroke-width="22"
+  stroke-linejoin="round"/>
+
+  <!-- Shield white base (Union Jack layers clip onto this) -->
+  <path d="
+    M512,180
+    L794,260
+    L794,560
+    Q794,780 512,870
+    Q230,780 230,560
+    L230,260
+    Z
+  "
+  fill="#FFFFFF"/>
+
+  <!-- ══════════════════════════════════════
+       UNION JACK  (clipped to shield)
+       Bounding rect: x=230–794, y=180–870 (564×690).
+       Centre: (512, 525).
+
+       Layer 1 – Blue field
+       Layer 2 – White X saltire (~90px wide parallelograms)
+       Layer 3 – Red X saltire (~55px wide, St Patrick offset)
+       Layer 4 – White St George cross (90px wide)
+       Layer 5 – Red St George cross (60px wide)
+       ══════════════════════════════════════ -->
+
+  <g clip-path="url(#shieldClip)">
+
+    <!-- 1. Blue field -->
+    <rect x="230" y="180" width="564" height="690" fill="#012169"/>
+
+    <!-- 2. White X saltire diagonals
+         Shield TL=(230,180) BR=(794,870), TR=(794,180) BL=(230,870).
+         Diagonal length≈891px. Perpendicular unit: (-0.7743, 0.6329).
+         Half-band = 45px → perp offset = (±34.8, ±28.5).
+         Parallelogram extends beyond shield; clip handles the edges. -->
+
+    <!-- White TL→BR band -->
+    <polygon
+      points="265,152 195,209 759,899 829,842"
+      fill="#FFFFFF"/>
+
+    <!-- White TR→BL band -->
+    <polygon
+      points="829,209 759,152 195,842 265,899"
+      fill="#FFFFFF"/>
+
+    <!-- 3. Red X saltire (St Patrick convention: each arm offset 10px toward
+         one side of the perpendicular so opposing triangles are counter-offset)
+         Half-band = 27.5px, shift = +10px toward +perp for TL→BR arm,
+         and −10px toward +perp for TR→BL arm. -->
+
+    <!-- Red TL→BR band (shifted +10px in perp direction) -->
+    <polygon
+      points="244,169 201,204 765,894 808,859"
+      fill="#C8102E"/>
+
+    <!-- Red TR→BL band (shifted −10px in perp direction) -->
+    <polygon
+      points="781,169 823,204 259,894 217,859"
+      fill="#C8102E"/>
+
+    <!-- 4. White St George cross — centred at (512, 525), arms 90px wide -->
+    <!-- Horizontal bar: y=480 to y=570 -->
+    <rect x="230" y="480" width="564" height="90" fill="#FFFFFF"/>
+    <!-- Vertical bar: x=467 to x=557 -->
+    <rect x="467" y="180" width="90" height="690" fill="#FFFFFF"/>
+
+    <!-- 5. Red St George cross — centred at (512, 525), arms 60px wide -->
+    <!-- Horizontal bar: y=495 to y=555 -->
+    <rect x="230" y="495" width="564" height="60" fill="#C8102E"/>
+    <!-- Vertical bar: x=482 to x=542 -->
+    <rect x="482" y="180" width="60" height="690" fill="#C8102E"/>
+
+  </g>
+
+  <!-- Shield outline stroke on top for crispness -->
+  <path d="
+    M512,180
+    L794,260
+    L794,560
+    Q794,780 512,870
+    Q230,780 230,560
+    L230,260
+    Z
+  "
+  fill="none"
+  stroke="#FFFFFF"
+  stroke-width="5"
+  stroke-linejoin="round"
+  opacity="0.30"/>
+
+  <!-- ══════════════════════════════════════
+       CROWN — sits above the shield top edge
+       Centre x=512. Width=240px (x=392–632).
+       Three spikes + base band + foot.
+       Clearly visible at small sizes.
+       ══════════════════════════════════════ -->
+
+  <!-- Left spike: base x=392–458, tip at (430,95) -->
+  <polygon points="392,186 458,186 430,95" fill="#F4A261"/>
+
+  <!-- Centre spike (tallest): base x=490–534, tip at (512,60) -->
+  <polygon points="490,186 534,186 512,60" fill="#F4A261"/>
+
+  <!-- Right spike: base x=566–632, tip at (594,95) -->
+  <polygon points="566,186 632,186 594,95" fill="#F4A261"/>
+
+  <!-- Crown base band: y=148–186 -->
+  <rect x="392" y="148" width="240" height="38" rx="5" fill="#F4A261"/>
+
+  <!-- Crown base foot: y=182–198 -->
+  <rect x="386" y="182" width="252" height="16" rx="4" fill="#E07B3A"/>
+
+  <!-- Orb circles at each spike tip -->
+  <circle cx="430" cy="95" r="12" fill="#F4A261"/>
+  <circle cx="512" cy="60" r="12" fill="#F4A261"/>
+  <circle cx="594" cy="95" r="12" fill="#F4A261"/>
+
+</svg>
