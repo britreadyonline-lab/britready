@@ -23,6 +23,12 @@
   const hasValidDate = date && !Number.isNaN(date.getTime());
   const isToday = hasValidDate && date.toDateString() === new Date().toDateString();
   const state = stream.state || 'upcoming';
+  const formatTime = (value) => new Intl.DateTimeFormat('en-GB', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZoneName: 'short'
+  }).format(value).replace(/\b(am|pm)\b/i, (period) => period.toUpperCase());
 
   const stateLabels = {
     upcoming: isToday ? 'Live today' : 'Upcoming',
@@ -34,9 +40,7 @@
   document.body.dataset.streamState = state;
   stateElement.lastChild.textContent = ` ${stateLabels[state] || 'Upcoming'}`;
   locationElement.textContent = stream.shortAirport || stream.airport || 'Location coming soon';
-  timeElement.textContent = hasValidDate
-    ? new Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }).format(date)
-    : 'Time coming soon';
+  timeElement.textContent = hasValidDate ? formatTime(date) : 'Time coming soon';
   timeElement.dateTime = stream.startsAt || '';
 
   primaryCta.href = stream.youtubeUrl || social.youtubeChannelUrl || '#';
@@ -82,7 +86,7 @@
   if (hasNext) {
     $('next-airport').textContent = next.airport;
     $('next-date').textContent = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }).format(nextDate);
-    $('next-time').textContent = new Intl.DateTimeFormat('en-GB', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }).format(nextDate);
+    $('next-time').textContent = formatTime(nextDate);
     $('next-status').textContent = next.status || 'Scheduled';
     nextCta.href = next.youtubeUrl || social.youtubeChannelUrl || '#';
   } else {
