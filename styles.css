@@ -12,6 +12,513 @@
   --shadow: 0 18px 42px rgba(23, 32, 51, 0.12);
 }
 
+/* Mobile-first aviation creator landing page */
+
+[hidden] {
+  display: none !important;
+}
+
+.aviation-home .brand span {
+  display: grid;
+  gap: 1px;
+}
+
+.aviation-home .brand small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aviation-home .nav > .subscribe-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 13px;
+  border-radius: 9px;
+  background: rgba(225, 6, 0, 0.16);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.aviation-home .nav > .subscribe-nav:hover {
+  background: var(--aviation-red);
+}
+
+.creator-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(40, 108, 180, 0.3), transparent 34%),
+    linear-gradient(145deg, #07111f 0%, #0c2139 60%, #122f50 100%);
+}
+
+.creator-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.68fr) minmax(0, 1.32fr);
+  gap: 54px;
+  align-items: center;
+  width: min(1320px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 62px 0 72px;
+}
+
+.hero-content {
+  min-width: 0;
+}
+
+.tiktok-context {
+  width: fit-content;
+  margin: 0 0 20px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.stream-snapshot {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.stream-state {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 4px;
+  color: var(--aviation-yellow);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stream-state span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff302a;
+  box-shadow: 0 0 0 5px rgba(255, 48, 42, 0.16);
+}
+
+[data-stream-state="upcoming"] .stream-state span {
+  background: var(--aviation-yellow);
+  box-shadow: 0 0 0 5px rgba(255, 213, 31, 0.13);
+}
+
+[data-stream-state="stream_ended"] .stream-state span {
+  background: #8190a3;
+  box-shadow: none;
+}
+
+.stream-location {
+  color: #fff;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.stream-time {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.hero-content h1 {
+  max-width: 540px;
+  margin: 0;
+  font-size: clamp(44px, 5.3vw, 76px);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.hero-summary {
+  margin: 18px 0 26px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 19px;
+}
+
+.primary-live-cta {
+  width: 100%;
+  min-height: 66px;
+  justify-content: center;
+  border-radius: 13px;
+  background: var(--aviation-red);
+  box-shadow: 0 18px 40px rgba(225, 6, 0, 0.3);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.primary-live-cta:hover {
+  background: #f01812;
+  transform: translateY(-1px);
+}
+
+.primary-live-cta svg,
+.subscribe-button svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.hero-countdown {
+  margin-top: 13px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.player-preview {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: #03070c;
+  box-shadow: 0 38px 90px rgba(0, 0, 0, 0.44);
+}
+
+.player-preview > img,
+.player-preview > iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+
+.player-preview::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 52%, rgba(3, 7, 12, 0.66));
+  content: "";
+  pointer-events: none;
+}
+
+.player-preview.is-playing::after {
+  display: none;
+}
+
+.player-play {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 76px;
+  height: 54px;
+  place-items: center;
+  border: 0;
+  border-radius: 14px;
+  background: var(--aviation-red);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.player-play span {
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 17px solid #fff;
+}
+
+.player-caption {
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 14px;
+  left: 16px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.next-spotting {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.65fr) minmax(0, 1.4fr) auto;
+  gap: 34px;
+  align-items: center;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 76px 0;
+}
+
+.next-spotting h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 48px);
+  letter-spacing: -0.035em;
+}
+
+.spotting-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.spotting-details > div {
+  min-width: 0;
+  padding: 16px 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.spotting-details span,
+.spotting-details strong {
+  display: block;
+}
+
+.spotting-details span {
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spotting-details strong {
+  overflow-wrap: anywhere;
+  color: #fff;
+  font-size: 15px;
+}
+
+.next-spotting-cta {
+  min-height: 52px;
+  padding: 0 19px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 11px;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.next-empty-message {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.social-secondary {
+  min-height: 56px;
+  padding: 0 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: transparent;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .creator-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: min(100% - 40px, 720px);
+  }
+
+  .next-spotting {
+    grid-template-columns: 1fr;
+  }
+
+  .next-spotting-cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .aviation-home .site-header {
+    position: relative;
+  }
+
+  .aviation-home .nav {
+    width: calc(100% - 28px);
+    min-height: 60px;
+  }
+
+  .aviation-home .brand {
+    font-size: 14px;
+  }
+
+  .aviation-home .brand img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .aviation-home .nav > .subscribe-nav {
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .creator-hero-inner {
+    gap: 22px;
+    width: calc(100% - 28px);
+    padding: 20px 0 32px;
+  }
+
+  .tiktok-context {
+    margin-bottom: 16px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .stream-snapshot {
+    gap: 2px;
+    margin-bottom: 18px;
+  }
+
+  .stream-state {
+    margin-bottom: 3px;
+    font-size: 11px;
+  }
+
+  .stream-location {
+    font-size: 27px;
+  }
+
+  .stream-time {
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 12.5vw, 52px);
+  }
+
+  .hero-summary {
+    margin: 12px 0 19px;
+    font-size: 16px;
+  }
+
+  .primary-live-cta {
+    min-height: 62px;
+    font-size: 15px;
+  }
+
+  .player-preview {
+    border-radius: 12px;
+  }
+
+  .player-play {
+    width: 64px;
+    height: 46px;
+    border-radius: 11px;
+  }
+
+  .player-caption {
+    bottom: 10px;
+    font-size: 11px;
+  }
+
+  .next-spotting {
+    gap: 20px;
+    width: calc(100% - 28px);
+    padding: 52px 0;
+  }
+
+  .next-spotting .section-label {
+    margin-bottom: 9px;
+  }
+
+  .next-spotting h2 {
+    font-size: 31px;
+  }
+
+  .spotting-details {
+    grid-template-columns: 1fr;
+  }
+
+  .spotting-details > div {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 10px;
+    align-items: baseline;
+    padding: 12px 14px;
+  }
+
+  .aviation-section {
+    width: calc(100% - 28px);
+    padding: 54px 0;
+  }
+
+  .aviation-section .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .aviation-section .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .aviation-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 0 0 12px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .aviation-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aviation-grid article {
+    min-width: min(78vw, 300px);
+    scroll-snap-align: start;
+  }
+
+  .aviation-grid article > img {
+    height: 150px;
+  }
+
+  .aircraft-card-copy {
+    padding: 16px 18px 19px;
+  }
+
+  .aviation-grid h3 {
+    margin: 10px 0 6px;
+    font-size: 22px;
+  }
+
+  .aviation-grid p {
+    font-size: 14px;
+  }
+
+  .channel-section {
+    width: calc(100% - 28px);
+    margin-bottom: 54px;
+    padding: 28px 22px;
+  }
+
+  .channel-actions,
+  .subscribe-button,
+  .social-secondary {
+    width: 100%;
+  }
+}
+
+@layer legacy {
+
 * {
   box-sizing: border-box;
 }
@@ -1139,4 +1646,6 @@ h1 {
   .subscribe-button {
     width: 100%;
   }
+}
+
 }
