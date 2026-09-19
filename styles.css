@@ -491,6 +491,11 @@ h1 {
   background: rgba(225, 6, 0, 0.18);
 }
 
+.aviation-home .nav-links .subscribe-nav {
+  color: #fff;
+  background: var(--aviation-red);
+}
+
 .live-nav span,
 .live-kicker span {
   width: 9px;
@@ -875,6 +880,26 @@ h1 {
   color: #0d2037;
 }
 
+.channel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.subscribe-button {
+  min-height: 56px;
+  padding: 0 25px;
+  border: 1px solid var(--aviation-red);
+  border-radius: 12px;
+  background: var(--aviation-red);
+  color: #fff;
+}
+
+.subscribe-button:hover {
+  background: #f01812;
+}
+
 .aviation-home .site-footer {
   border-color: rgba(255, 255, 255, 0.1);
   background: #050c16;
@@ -1052,7 +1077,9 @@ h1 {
     padding: 30px 24px;
   }
 
-  .channel-button {
+  .channel-actions,
+  .channel-button,
+  .subscribe-button {
     width: 100%;
   }
 }
