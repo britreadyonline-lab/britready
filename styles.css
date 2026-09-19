@@ -744,6 +744,59 @@ h1 {
   font-size: 24px;
 }
 
+.live-countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 13px;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.live-countdown .countdown-label {
+  margin-right: 7px;
+  color: var(--aviation-yellow);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.live-countdown .countdown-value {
+  color: #fff;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.live-countdown small {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.live-countdown .countdown-separator {
+  margin: 0 1px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 16px;
+}
+
+.live-countdown.is-live {
+  align-items: center;
+  color: #fff;
+}
+
+.live-countdown.is-live strong {
+  margin: 0;
+  font-size: 17px;
+}
+
+.live-now-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff302a;
+  box-shadow: 0 0 0 5px rgba(255, 48, 42, 0.16);
+}
+
 .live-action-bar .live-button {
   width: 100%;
 }

@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.britreadyapp.co.uk/">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260919-0722">
+  <link rel="stylesheet" href="styles.css?v=20260919-0730">
 </head>
 <body class="aviation-home">
   <header class="site-header">
@@ -41,6 +41,14 @@
           <div>
             <span>Today</span>
             <strong><time datetime="2026-09-19T12:00:00+01:00">12:00 noon BST</time></strong>
+            <div class="live-countdown" id="live-countdown" role="timer" aria-label="Time remaining until the live stream">
+              <span class="countdown-label">Starts in</span>
+              <span class="countdown-value" id="countdown-hours">00</span><small>h</small>
+              <span class="countdown-separator">:</span>
+              <span class="countdown-value" id="countdown-minutes">00</span><small>m</small>
+              <span class="countdown-separator">:</span>
+              <span class="countdown-value" id="countdown-seconds">00</span><small>s</small>
+            </div>
           </div>
           <a class="button live-button" href="https://www.youtube.com/live/Skh2h1wsQPk" target="_blank" rel="noopener noreferrer">
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
@@ -130,5 +138,33 @@
       </div>
     </div>
   </footer>
+  <script>
+    (() => {
+      const countdown = document.getElementById('live-countdown');
+      const hours = document.getElementById('countdown-hours');
+      const minutes = document.getElementById('countdown-minutes');
+      const seconds = document.getElementById('countdown-seconds');
+      const liveAt = new Date('2026-09-19T12:00:00+01:00').getTime();
+
+      const updateCountdown = () => {
+        const remaining = liveAt - Date.now();
+
+        if (remaining <= 0) {
+          countdown.classList.add('is-live');
+          countdown.innerHTML = '<span class="live-now-dot" aria-hidden="true"></span><strong>We\u2019re live now</strong>';
+          countdown.setAttribute('aria-label', 'The live stream is now live');
+          return;
+        }
+
+        const totalSeconds = Math.floor(remaining / 1000);
+        hours.textContent = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+        minutes.textContent = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+        seconds.textContent = String(totalSeconds % 60).padStart(2, '0');
+        window.setTimeout(updateCountdown, 1000);
+      };
+
+      updateCountdown();
+    })();
+  </script>
 </body>
 </html>
