@@ -455,3 +455,455 @@ h1 {
     flex-direction: column;
   }
 }
+
+/* BritReady Aviation live-event homepage */
+
+.aviation-home {
+  --aviation-night: #07111f;
+  --aviation-panel: #0d1b2d;
+  --aviation-blue: #173a63;
+  --aviation-red: #e10600;
+  --aviation-yellow: #ffd51f;
+  background: var(--aviation-night);
+  color: #f7f9fc;
+}
+
+.aviation-home .site-header {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(7, 17, 31, 0.94);
+}
+
+.aviation-home .brand {
+  color: #fff;
+}
+
+.aviation-home .nav-links a {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.aviation-home .nav-links a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.aviation-home .nav-links .live-nav {
+  color: #fff;
+  background: rgba(225, 6, 0, 0.18);
+}
+
+.live-nav span,
+.live-kicker span {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #ff302a;
+  box-shadow: 0 0 0 5px rgba(255, 48, 42, 0.16);
+}
+
+.live-nav span {
+  margin-right: 8px;
+}
+
+.live-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 14%, rgba(40, 108, 180, 0.35), transparent 32%),
+    linear-gradient(145deg, #07111f 0%, #0c2139 58%, #122f50 100%);
+}
+
+.live-hero::after {
+  position: absolute;
+  inset: auto -10% -48% 28%;
+  height: 540px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  content: "";
+  transform: rotate(-8deg);
+}
+
+.live-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(330px, 0.78fr) minmax(540px, 1.22fr);
+  gap: 44px;
+  align-items: center;
+  width: min(1320px, calc(100% - 40px));
+  min-height: calc(100vh - 74px);
+  margin: 0 auto;
+  padding: 54px 0 64px;
+}
+
+.live-copy {
+  padding: 18px 0;
+}
+
+.live-kicker,
+.section-label {
+  margin: 0 0 18px;
+  color: var(--aviation-yellow);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.live-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live-copy h1 {
+  max-width: 760px;
+  font-size: clamp(52px, 6vw, 92px);
+  letter-spacing: -0.045em;
+}
+
+.live-copy h1 em {
+  color: var(--aviation-yellow);
+  font-style: normal;
+}
+
+.live-intro {
+  max-width: 600px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(18px, 2vw, 22px);
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.event-details div {
+  padding: 15px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.event-details span,
+.event-details strong {
+  display: block;
+}
+
+.event-details span {
+  color: rgba(255, 255, 255, 0.57);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.event-details strong {
+  margin-top: 4px;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.live-copy .hero-actions {
+  align-items: center;
+  margin-top: 30px;
+}
+
+.live-button,
+.watch-fallback {
+  min-height: 58px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--aviation-red);
+  box-shadow: 0 16px 34px rgba(225, 6, 0, 0.26);
+  color: #fff;
+  font-size: 17px;
+}
+
+.live-button:hover,
+.watch-fallback:hover {
+  background: #f01812;
+  transform: translateY(-1px);
+}
+
+.live-button svg {
+  width: 26px;
+  height: 26px;
+  margin-right: 11px;
+  fill: currentColor;
+}
+
+.text-link {
+  padding: 10px 4px;
+  color: #fff;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.text-link span {
+  color: var(--aviation-yellow);
+}
+
+.live-artwork {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: #10243d;
+  box-shadow: 0 38px 90px rgba(0, 0, 0, 0.42);
+  transform: perspective(1400px) rotateY(-2deg);
+}
+
+.live-artwork img {
+  width: 100%;
+}
+
+.watch-section,
+.aviation-section,
+.channel-section {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.watch-section {
+  padding: 90px 0;
+}
+
+.watch-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr);
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.watch-heading h2,
+.section-heading h2,
+.channel-section h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(34px, 5vw, 60px);
+  letter-spacing: -0.035em;
+}
+
+.watch-heading > p,
+.channel-section > div > p:last-child {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 17px;
+}
+
+.video-shell {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 18px;
+  background: #000;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+}
+
+.video-shell iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.watch-fallback {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.aviation-section {
+  padding: 92px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-heading {
+  max-width: 880px;
+  margin-bottom: 38px;
+}
+
+.aviation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.aviation-grid article {
+  min-height: 250px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(23, 58, 99, 0.76), rgba(13, 27, 45, 0.72));
+}
+
+.aviation-grid article > span {
+  color: var(--aviation-yellow);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.aviation-grid h3 {
+  margin: 62px 0 10px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.aviation-grid p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.channel-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 90px;
+  padding: 45px;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #173a63, #0d2037);
+}
+
+.channel-section > div {
+  max-width: 740px;
+}
+
+.channel-section > div > p:last-child {
+  margin-top: 18px;
+}
+
+.channel-button {
+  min-height: 56px;
+  padding: 0 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: #fff;
+  color: #0d2037;
+}
+
+.aviation-home .site-footer {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: #050c16;
+}
+
+.aviation-home .footer-inner,
+.aviation-home .footer-links a {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 1080px) {
+  .live-hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .live-copy {
+    max-width: 760px;
+  }
+
+  .live-artwork {
+    transform: none;
+  }
+
+  .aviation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .aviation-home .nav {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .aviation-home .nav-links {
+    width: auto;
+    padding: 0;
+  }
+
+  .aviation-home .nav-links a:not(.live-nav) {
+    display: none;
+  }
+
+  .live-hero-inner,
+  .watch-section,
+  .aviation-section,
+  .channel-section {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .live-hero-inner {
+    gap: 28px;
+    padding: 38px 0 42px;
+  }
+
+  .live-copy h1 {
+    font-size: clamp(46px, 14vw, 68px);
+  }
+
+  .event-details,
+  .watch-heading,
+  .channel-section {
+    grid-template-columns: 1fr;
+  }
+
+  .event-details {
+    gap: 10px;
+  }
+
+  .live-copy .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .text-link {
+    text-align: center;
+  }
+
+  .live-artwork {
+    border-radius: 12px;
+  }
+
+  .watch-section,
+  .aviation-section {
+    padding: 64px 0;
+  }
+
+  .watch-heading {
+    align-items: start;
+  }
+
+  .video-shell {
+    border-radius: 12px;
+  }
+
+  .aviation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aviation-grid article {
+    min-height: 205px;
+  }
+
+  .aviation-grid h3 {
+    margin-top: 38px;
+  }
+
+  .channel-section {
+    gap: 28px;
+    margin-bottom: 64px;
+    padding: 30px 24px;
+  }
+
+  .channel-button {
+    width: 100%;
+  }
+}
