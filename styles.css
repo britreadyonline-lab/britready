@@ -492,8 +492,22 @@ h1 {
 }
 
 .aviation-home .nav-links .subscribe-nav {
+  gap: 8px;
+  padding: 0 13px;
   color: #fff;
   background: var(--aviation-red);
+  box-shadow: 0 8px 22px rgba(225, 6, 0, 0.24);
+}
+
+.aviation-home .nav-links .subscribe-nav:hover {
+  background: #f01812;
+}
+
+.subscribe-nav svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .live-nav span,
