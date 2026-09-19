@@ -679,45 +679,17 @@ h1 {
   background: #10243d;
   box-shadow: 0 38px 90px rgba(0, 0, 0, 0.42);
   color: #fff;
-  text-decoration: none;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.live-artwork img {
+.hero-live-player {
+  aspect-ratio: 16 / 9;
+}
+
+.hero-live-player iframe {
+  display: block;
   width: 100%;
-}
-
-.live-artwork:hover {
-  border-color: rgba(255, 213, 31, 0.6);
-  box-shadow: 0 42px 100px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
-}
-
-.live-artwork:focus-visible {
-  outline: 3px solid var(--aviation-yellow);
-  outline-offset: 4px;
-}
-
-.artwork-action {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 42px;
-  padding: 0 16px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-  background: rgba(7, 17, 31, 0.88);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(12px);
-  font-size: 14px;
-  font-weight: 850;
-}
-
-.artwork-action b {
-  color: var(--aviation-yellow);
+  height: 100%;
+  border: 0;
 }
 
 .live-action-bar {
