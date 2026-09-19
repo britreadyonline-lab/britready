@@ -1,6 +1,6 @@
 # BritReady Static Website
 
-This repository is ready for GitHub Pages and contains the BritReady public website, privacy policy, terms, and data deletion pages.
+This repository is ready for GitHub Pages and contains the BritReady Aviation public website.
 
 Recommended GitHub Pages settings:
 
@@ -10,14 +10,6 @@ Recommended GitHub Pages settings:
 4. Select the main branch and the repository root.
 5. Save.
 
-Expected public URLs:
+Expected public URL:
 
 - `https://britreadyonline-lab.github.io/britready/`
-- `https://britreadyonline-lab.github.io/britready/privacy/`
-- `https://britreadyonline-lab.github.io/britready/terms/`
-- `https://britreadyonline-lab.github.io/britready/data-deletion/`
-
-Store listing fields:
-
-- Marketing URL: `https://britreadyonline-lab.github.io/britready/`
-- Privacy Policy URL: `https://britreadyonline-lab.github.io/britready/privacy/`
