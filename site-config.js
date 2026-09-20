@@ -5,7 +5,7 @@
  */
 window.BRITREADY_SITE_CONFIG = {
   stream: {
-    state: "live_now",
+    state: "upcoming",
     airport: "London Heathrow Airport",
     shortAirport: "London Heathrow",
     startsAt: "2026-09-20T17:00:00+01:00",
@@ -17,7 +17,7 @@ window.BRITREADY_SITE_CONFIG = {
     airport: "London Heathrow Airport",
     startsAt: "2026-09-20T17:00:00+01:00",
     endsAt: "",
-    status: "Live now",
+    status: "Scheduled",
     youtubeUrl: "https://youtube.com/live/_kFT2eaQhkY?feature=share"
   },
   social: {
