@@ -20,7 +20,9 @@
   const primaryCtaText = primaryCta.querySelector('span');
 
   const date = stream.startsAt ? new Date(stream.startsAt) : null;
+  const endDate = stream.endsAt ? new Date(stream.endsAt) : null;
   const hasValidDate = date && !Number.isNaN(date.getTime());
+  const hasValidEndDate = endDate && !Number.isNaN(endDate.getTime());
   const isToday = hasValidDate && date.toDateString() === new Date().toDateString();
   const state = stream.state || 'upcoming';
   const formatTime = (value) => new Intl.DateTimeFormat('en-GB', {
@@ -29,6 +31,11 @@
     hour12: true,
     timeZoneName: 'short'
   }).format(value).replace(/\b(am|pm)\b/i, (period) => period.toUpperCase());
+  const formatTimeRange = (start, end) => {
+    if (!end) return formatTime(start);
+    const startTime = formatTime(start).replace(/\s+[A-Z]{3,5}$/, '');
+    return `${startTime}–${formatTime(end)}`;
+  };
 
   const stateLabels = {
     upcoming: isToday ? 'Live today' : 'Upcoming',
@@ -40,7 +47,7 @@
   document.body.dataset.streamState = state;
   stateElement.lastChild.textContent = ` ${stateLabels[state] || 'Upcoming'}`;
   locationElement.textContent = stream.shortAirport || stream.airport || 'Location coming soon';
-  timeElement.textContent = hasValidDate ? formatTime(date) : 'Time coming soon';
+  timeElement.textContent = hasValidDate ? formatTimeRange(date, hasValidEndDate ? endDate : null) : 'Time coming soon';
   timeElement.dateTime = stream.startsAt || '';
 
   primaryCta.href = stream.youtubeUrl || social.youtubeChannelUrl || '#';
@@ -81,12 +88,13 @@
   }, { once: true });
 
   const nextDate = next.startsAt ? new Date(next.startsAt) : null;
+  const nextEndDate = next.endsAt ? new Date(next.endsAt) : null;
   const hasNext = next.airport && nextDate && !Number.isNaN(nextDate.getTime());
   const nextCta = $('next-spotting-cta');
   if (hasNext) {
     $('next-airport').textContent = next.airport;
     $('next-date').textContent = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long' }).format(nextDate);
-    $('next-time').textContent = formatTime(nextDate);
+    $('next-time').textContent = formatTimeRange(nextDate, nextEndDate && !Number.isNaN(nextEndDate.getTime()) ? nextEndDate : null);
     $('next-status').textContent = next.status || 'Scheduled';
     nextCta.href = next.youtubeUrl || social.youtubeChannelUrl || '#';
   } else {

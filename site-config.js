@@ -8,13 +8,15 @@ window.BRITREADY_SITE_CONFIG = {
     state: "upcoming",
     airport: "London Heathrow Airport",
     shortAirport: "London Heathrow",
-    startsAt: "2026-09-19T16:20:00+01:00",
+    startsAt: "2026-09-20T12:00:00+01:00",
+    endsAt: "2026-09-20T14:50:00+01:00",
     youtubeUrl: "https://youtube.com/live/jUU2ZqHsupQ?feature=share",
     youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/jUU2ZqHsupQ?rel=0&autoplay=1"
   },
   nextSpotting: {
     airport: "London Heathrow Airport",
-    startsAt: "2026-09-19T16:20:00+01:00",
+    startsAt: "2026-09-20T12:00:00+01:00",
+    endsAt: "2026-09-20T14:50:00+01:00",
     status: "Scheduled",
     youtubeUrl: "https://youtube.com/live/jUU2ZqHsupQ?feature=share"
   },
