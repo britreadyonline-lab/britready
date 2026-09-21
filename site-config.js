@@ -10,15 +10,15 @@ window.BRITREADY_SITE_CONFIG = {
     shortAirport: "London Heathrow",
     startsAt: "2026-09-22T17:30:00+01:00",
     endsAt: "",
-    youtubeUrl: "https://youtube.com/live/_kFT2eaQhkY?feature=share",
-    youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/_kFT2eaQhkY?rel=0&autoplay=1"
+    youtubeUrl: "https://youtube.com/live/eEGiqgSy29M?feature=share",
+    youtubeEmbedUrl: "https://www.youtube-nocookie.com/embed/eEGiqgSy29M?rel=0&autoplay=1"
   },
   nextSpotting: {
     airport: "London Heathrow Airport",
     startsAt: "2026-09-22T17:30:00+01:00",
     endsAt: "",
     status: "Scheduled",
-    youtubeUrl: "https://youtube.com/live/_kFT2eaQhkY?feature=share"
+    youtubeUrl: "https://youtube.com/live/eEGiqgSy29M?feature=share"
   },
   social: {
     youtubeChannelUrl: "https://www.youtube.com/@BritReadyAviation",
